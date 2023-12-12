@@ -38,7 +38,7 @@ public class CuestionarioPreguntaController {
 	@GetMapping("/cuestionarioPregunta/{id_Cuestionario}")
 	public ModelAndView cargarCuesPregunta(@PathVariable(name="id_Cuestionario") Integer id) {
 		
-		ModelAndView unCuesP= new ModelAndView("formularioCuesPregunta");
+		ModelAndView unCuesP= new ModelAndView("formularioCuestionarioPregunta");
 		
 		unCuesP.addObject("listadoSeleccionadas", cuestionarioPreguntaService.ListarPreguntasDeUnCuestionario(id));
 		unCuesP.addObject("listadoDeNoSeleccionadas", cuestionarioPreguntaService.ListarPreguntasNoSeleccionadas( cuestionarioPreguntaService.ListarPreguntasDeUnCuestionario(id), preguntaService.listarPreguntas()));

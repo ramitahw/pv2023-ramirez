@@ -49,7 +49,7 @@ public class CuestionarioAlumnoController {
 	
 	@GetMapping("/elegirCuestionario")
 	public ModelAndView cargarCuesEstudiante () {
-		ModelAndView cargaCuestionarioAlumno = new ModelAndView("mostrarCuestionariosAEstudiantes");
+		ModelAndView cargaCuestionarioAlumno = new ModelAndView("mostrarCuestionariosAAlumnos");
 		cargaCuestionarioAlumno.addObject("cuestionarios", cuestionarioService.listarCuestionariosTodos());
 		GRUPO6.warn("Elegir Cuestionario");
 		return cargaCuestionarioAlumno;

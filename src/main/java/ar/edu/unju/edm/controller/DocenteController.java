@@ -40,7 +40,14 @@ public class DocenteController {
 		GRUPO6.warn("Cargando nuevo Docente");
 		return cargaDocente;
 	}
-	
+	@GetMapping("/docente/{id}")
+	public ModelAndView cargarDocenteid(@PathVariable(name="id") Integer id) {
+		ModelAndView listadoDocentes = new ModelAndView("perfilDocente");
+		
+		listadoDocentes.addObject("docente",unServicio.mostrarUnDocente(id));
+		
+		return listadoDocentes;
+	}
 	@GetMapping("/listadoDocente")
 	public ModelAndView mostrarDocente() {
 		ModelAndView listadoDocentes = new ModelAndView("mostrarDocentes");
